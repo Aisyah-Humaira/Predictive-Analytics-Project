@@ -23,21 +23,25 @@ Referensi: [Egyptian Informatics Journal](https://www.sciencedirect.com/science/
 Dataset yang digunakan dalam proyek ini diperoleh dari situs Kaggle mengenai [Simple Feature To Detect Diabetes](https://www.kaggle.com/datasets/simaanjali/diabetes-simple-diagnosis). Dataset ini terdiri dari 88380 baris dan 9 kolom. 
 
 Berdasarkan informasi dari Kaggle, variabel-variabel pada dataset adalah sebagai berikut:
-- Age: Mewakili usia pasien dalam tahun. Usia dapat menjadi faktor risiko untuk diabetes, karena risiko diabetes meningkat seiring bertambahnya usia.
-- Gender: Menunjukkan jenis kelamin pasien, yang dapat menjadi faktor dalam prediksi diabetes. Beberapa studi menyarankan bahwa wanita mungkin memiliki risiko yang berbeda dibandingkan pria dalam mengembangkan diabetes.
-- Body Mass Index (BMI): BMI adalah ukuran yang menggunakan tinggi dan berat badan seseorang untuk menentukan apakah mereka berada dalam kategori berat badan normal, kelebihan berat badan, atau obesitas. BMI yang tinggi dikaitkan dengan risiko diabetes yang lebih tinggi.
-- High Blood Pressure (High_BP): Indikator apakah seorang pasien menderita hipertensi. Tekanan darah tinggi adalah faktor risiko yang signifikan untuk diabetes tipe 2.
-- Fasting Blood Glucose (FBS): Mewakili tingkat glukosa dalam darah setelah puasa semalaman. Tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes.
-- HbA1c (HbA1c_level): Pengukuran rata-rata tingkat gula darah selama 2-3 bulan terakhir. Ini adalah indikator penting untuk diagnosis dan pengelolaan diabetes.
-- Smoking: Menunjukkan apakah pasien merokok atau tidak. Merokok dapat menjadi faktor risiko tambahan untuk diabetes tipe 2.
-- Diagonisis: Indikator bahwa seseorang memiliki diabetes.
+- *Age*: Mewakili usia pasien dalam tahun. Usia dapat menjadi faktor risiko untuk diabetes, karena risiko diabetes meningkat seiring bertambahnya usia.
+- *Gender*: Menunjukkan jenis kelamin pasien, yang dapat menjadi faktor dalam prediksi diabetes. Beberapa studi menyarankan bahwa wanita mungkin memiliki risiko yang berbeda dibandingkan pria dalam mengembangkan diabetes.
+- *Body Mass Index (BMI)*: BMI adalah ukuran yang menggunakan tinggi dan berat badan seseorang untuk menentukan apakah mereka berada dalam kategori berat badan normal, kelebihan berat badan, atau obesitas. BMI yang tinggi dikaitkan dengan risiko diabetes yang lebih tinggi.
+- *High Blood Pressure (High_BP)*: Indikator apakah seorang pasien menderita hipertensi. Tekanan darah tinggi adalah faktor risiko yang signifikan untuk diabetes tipe 2.
+- *Fasting Blood Glucose (FBS)*: Mewakili tingkat glukosa dalam darah setelah puasa semalaman. Tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes.
+- *HbA1c (HbA1c_level)*: Pengukuran rata-rata tingkat gula darah selama 2-3 bulan terakhir. Ini adalah indikator penting untuk diagnosis dan pengelolaan diabetes.
+- *Smoking*: Menunjukkan apakah pasien merokok atau tidak. Merokok dapat menjadi faktor risiko tambahan untuk diabetes tipe 2.
+- *Diagonisis*: Indikator bahwa seseorang memiliki diabetes.
 
 Selain dari deskripsi variable, didapatkan pula informasi mengenai dataset sebagai berikut
 - Terdapat 1 kolom non-numerik dengan tipe object yaitu *Gender*. Kolom ini merupakan categorical features.
 - Terdapat 1 kolom numerik dengan tipe data float64 yaitu *HbA1c_level*. Kolom ini merupakan numerical features.
-- Terdapat 7 kolom numerik dengan tipe data int64, yaitu: * Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis *. Kolom ini merupakan numerical features.
+- Terdapat 7 kolom numerik dengan tipe data int64, yaitu: *Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis*. Kolom ini merupakan numerical features.
 
 Pada tahap selanjutnya, dilakukan Exploratory Data Analysis (EDA) untuk memahami dan menganalisis karakteristik dari data yang digunakan. EDA bertujuan untuk menemukan pola, mengidentifikasi anomali, serta memeriksa asumsi-asumsi yang ada pada dataset. Terdapat dua metode yang digunakan yaitu metode bersifat univariate yang melibatkan satu variate atau variabel dan multivariate yang melibatkan dua atau lebih variabel.  
+1. *Univariate Analysis* melibatkan satu variate atau variabel. Pada proses analisis terhadap fitur kategori didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/3933c4fd-8105-4e04-93d8-869c877f1989)
+Selanjutnya, untuk fitur numerik didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/991f9797-6757-4479-8a0e-d06b73870c37)
+
+3. *Multivariate Analysis* melibatkan dua atau lebih variabel. Pada proses ini didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/00add511-e329-48e1-95a8-a5ca7898d393)
 
 ## Data Preparation
 Pada tahap ini, dilakukan data preparation atau persiapan data yang bertujuan untuk melakukan transformasi pada dataset. Transformasi ini dilakukan agar data memiliki format atau bentuk yang sesuai dan cocok untuk proses pemodelan dalam machine learning. Beberapa langkah yang umum dilakukan dalam data preparation antara lain:
@@ -48,14 +52,22 @@ Pada tahap ini, dilakukan data preparation atau persiapan data yang bertujuan un
 
 ## Modeling
 Model development dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model machine learning dengan tiga algoritma yaitu 
-1.	K-Nearest Neighbor (KNN)
-      KNN bekerja dengan mengukur jarak antara sebuah sampel tertentu dengan seluruh sampel dalam set pelatihan, lalu memilih k-tetangga terdekat. Algoritma KNN memanfaatkan konsep 'kesamaan fitur' untuk menentukan prediksi nilai dari data baru. Dengan cara ini, setiap data baru akan diberikan nilai berdasarkan seberapa miripnya dengan titik-titik dalam set data pelatihan. 
+1.	K-Nearest Neighbor (KNN): bekerja dengan mengukur jarak antara sebuah sampel tertentu dengan seluruh sampel dalam set pelatihan, lalu memilih k-tetangga terdekat. Algoritma KNN memanfaatkan konsep 'kesamaan fitur' untuk menentukan prediksi nilai dari data baru. Dengan cara ini, setiap data baru akan diberikan nilai berdasarkan seberapa miripnya dengan titik-titik dalam set data pelatihan. 
 
-3.	Random Forest
-      Random Forest termasuk dalam kategori model ensemble. Terdiri dari berbagai pohon keputusan (decision tree), Random Forest menggunakan pendekatan pemilihan data dan fitur secara acak. 
+3.	Random Forest: termasuk dalam kategori model ensemble. Terdiri dari berbagai pohon keputusan (decision tree), Random Forest menggunakan pendekatan pemilihan data dan fitur secara acak. 
 
-5.	Boosting Algorithm
-      Boosting Algorithm bekerja dengan membuat model awal dari data latih. Kemudian, algoritma ini membuat model berikutnya yang fokus untuk mengkoreksi kesalahan yang dilakukan oleh model sebelumnya. Proses ini berulang dengan penambahan model baru sampai prediksi pada data latih menjadi optimal atau telah mencapai jumlah model maksimum yang telah ditentukan.
+5.	Boosting Algorithm : bekerja dengan membuat model awal dari data latih. Kemudian, algoritma ini membuat model berikutnya yang fokus untuk mengkoreksi kesalahan yang dilakukan oleh model sebelumnya. Proses ini berulang dengan penambahan model baru sampai prediksi pada data latih menjadi optimal atau telah mencapai jumlah model maksimum yang telah ditentukan.
 
 ## Evaluation
-Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. 
+Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi data numerik adalah [Mean Squared Error (MSE)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880). MSE mengukur perbedaan antara prediksi model dengan nilai aktual dari data, lalu mengkuadratkan perbedaan tersebut untuk menghindari nilai selisih yang negatif. Setelah itu, perbedaan kuadrat dari setiap data dijumlahkan dan diambil rata-ratanya untuk mendapatkan nilai MSE.
+
+[mse](https://user-images.githubusercontent.com/88262711/195906174-0257deb8-0fab-4f64-af01-7509cf371c2c.jpeg)
+
+Keterangan:
+N = jumlah dataset
+yi = nilai sebenarnya
+y_pred = nilai prediksi
+
+sebelum menghitung nilai MSE dalam model, perlu dilakukan proses scaling fitur numerik pada data uji terlebih dahulu untuk memastikan bahwa fitur-fitur numerik dalam data test memiliki skala yang serupa dengan data train, yang telah di-scaling sebelumnya. Selanjutnya, dilakukan proses evaluasi ketiga model dengan metrik MSE dan didapatkan hasil ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/c3e7fffe-dd38-4a27-bb4d-9424e34a7195)
+
+Dari gambar di atas, terlihat bahwa, model Random Forest (RF) memberikan nilai eror yang paling kecil. Sedangkan model dengan algoritma K-Nearest Neighbor (KNN) memiliki eror yang paling besar.
