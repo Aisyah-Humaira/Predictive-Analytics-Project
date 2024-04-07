@@ -38,10 +38,15 @@ Selain dari deskripsi variable, didapatkan pula informasi mengenai dataset sebag
 - Terdapat 7 kolom numerik dengan tipe data int64, yaitu: *Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis*. Kolom ini merupakan numerical features.
 
 Pada tahap selanjutnya, dilakukan Exploratory Data Analysis (EDA) untuk memahami dan menganalisis karakteristik dari data yang digunakan. EDA bertujuan untuk menemukan pola, mengidentifikasi anomali, serta memeriksa asumsi-asumsi yang ada pada dataset. Terdapat dua metode yang digunakan yaitu metode bersifat univariate yang melibatkan satu variate atau variabel dan multivariate yang melibatkan dua atau lebih variabel.  
-1. *Univariate Analysis* melibatkan satu variate atau variabel. Pada proses analisis terhadap fitur kategori didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/3933c4fd-8105-4e04-93d8-869c877f1989)
-Selanjutnya, untuk fitur numerik didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/991f9797-6757-4479-8a0e-d06b73870c37)
+1. *Univariate Analysis* melibatkan satu variate atau variabel. Pada proses analisis terhadap fitur kategori didapatkan
+![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/3933c4fd-8105-4e04-93d8-869c877f1989)
 
-3. *Multivariate Analysis* melibatkan dua atau lebih variabel. Pada proses ini didapatkan ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/00add511-e329-48e1-95a8-a5ca7898d393)
+Selanjutnya, untuk fitur numerik didapatkan 
+
+![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/991f9797-6757-4479-8a0e-d06b73870c37)
+
+2. *Multivariate Analysis* melibatkan dua atau lebih variabel. Pada proses ini didapatkan
+![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/00add511-e329-48e1-95a8-a5ca7898d393)
 
 ## Data Preparation
 Pada tahap ini, dilakukan data preparation atau persiapan data yang bertujuan untuk melakukan transformasi pada dataset. Transformasi ini dilakukan agar data memiliki format atau bentuk yang sesuai dan cocok untuk proses pemodelan dalam machine learning. Beberapa langkah yang umum dilakukan dalam data preparation antara lain:
@@ -61,7 +66,7 @@ Model development dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi mo
 ## Evaluation
 Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi data numerik adalah [Mean Squared Error (MSE)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880). MSE mengukur perbedaan antara prediksi model dengan nilai aktual dari data, lalu mengkuadratkan perbedaan tersebut untuk menghindari nilai selisih yang negatif. Setelah itu, perbedaan kuadrat dari setiap data dijumlahkan dan diambil rata-ratanya untuk mendapatkan nilai MSE.
 
-[mse](https://user-images.githubusercontent.com/88262711/195906174-0257deb8-0fab-4f64-af01-7509cf371c2c.jpeg)
+![mse](https://user-images.githubusercontent.com/88262711/195906174-0257deb8-0fab-4f64-af01-7509cf371c2c.jpeg)
 
 Keterangan:
 N = jumlah dataset
