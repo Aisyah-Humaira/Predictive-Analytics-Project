@@ -16,45 +16,46 @@ Referensi: [Egyptian Informatics Journal](https://www.sciencedirect.com/science/
 - Model development apa yang memberikan hasil prediksi paling akurat untuk memprediksi penyakit diabetes?
 
 ### Goals
-‐	Mendapatkan model machine learning yang dapat digunakan untuk memprediksi penyakit diabetes
-‐	Mengetahui model development yang memberikan hasil prediksi paling akurat untuk memprediksi penyakit diabetes.
+- Mendapatkan model machine learning yang dapat digunakan untuk memprediksi penyakit diabetes.
+- Mengetahui model development yang memberikan hasil prediksi paling akurat untuk memprediksi penyakit diabetes.
 
 ## Data Understanding
 Dataset yang digunakan dalam proyek ini diperoleh dari situs Kaggle mengenai [Simple Feature To Detect Diabetes](https://www.kaggle.com/datasets/simaanjali/diabetes-simple-diagnosis). Dataset ini terdiri dari 88380 baris dan 9 kolom. 
 
 Berdasarkan informasi dari Kaggle, variabel-variabel pada dataset adalah sebagai berikut:
-‐	Age: Mewakili usia pasien dalam tahun. Usia dapat menjadi faktor risiko untuk diabetes, karena risiko diabetes meningkat seiring bertambahnya usia.
-‐	Gender: Menunjukkan jenis kelamin pasien, yang dapat menjadi faktor dalam prediksi diabetes. Beberapa studi menyarankan bahwa wanita mungkin memiliki risiko yang berbeda dibandingkan pria dalam mengembangkan diabetes.
-‐	Body Mass Index (BMI): BMI adalah ukuran yang menggunakan tinggi dan berat badan seseorang untuk menentukan apakah mereka berada dalam kategori berat badan normal, kelebihan berat badan, atau obesitas. BMI yang tinggi dikaitkan dengan risiko diabetes yang lebih tinggi.
-‐	High Blood Pressure (High_BP): Indikator apakah seorang pasien menderita hipertensi. Tekanan darah tinggi adalah faktor risiko yang signifikan untuk diabetes tipe 2.
-‐	Fasting Blood Glucose (FBS): Mewakili tingkat glukosa dalam darah setelah puasa semalaman. Tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes.
-‐	HbA1c (HbA1c_level): Pengukuran rata-rata tingkat gula darah selama 2-3 bulan terakhir. Ini adalah indikator penting untuk diagnosis dan pengelolaan diabetes.
-‐	Smoking: Menunjukkan apakah pasien merokok atau tidak. Merokok dapat menjadi faktor risiko tambahan untuk diabetes tipe 2.
-‐	Diagonisis: Indikator bahwa seseorang memiliki diabetes.
+- Age: Mewakili usia pasien dalam tahun. Usia dapat menjadi faktor risiko untuk diabetes, karena risiko diabetes meningkat seiring bertambahnya usia.
+- Gender: Menunjukkan jenis kelamin pasien, yang dapat menjadi faktor dalam prediksi diabetes. Beberapa studi menyarankan bahwa wanita mungkin memiliki risiko yang berbeda dibandingkan pria dalam mengembangkan diabetes.
+- Body Mass Index (BMI): BMI adalah ukuran yang menggunakan tinggi dan berat badan seseorang untuk menentukan apakah mereka berada dalam kategori berat badan normal, kelebihan berat badan, atau obesitas. BMI yang tinggi dikaitkan dengan risiko diabetes yang lebih tinggi.
+- High Blood Pressure (High_BP): Indikator apakah seorang pasien menderita hipertensi. Tekanan darah tinggi adalah faktor risiko yang signifikan untuk diabetes tipe 2.
+- Fasting Blood Glucose (FBS): Mewakili tingkat glukosa dalam darah setelah puasa semalaman. Tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes.
+- HbA1c (HbA1c_level): Pengukuran rata-rata tingkat gula darah selama 2-3 bulan terakhir. Ini adalah indikator penting untuk diagnosis dan pengelolaan diabetes.
+- Smoking: Menunjukkan apakah pasien merokok atau tidak. Merokok dapat menjadi faktor risiko tambahan untuk diabetes tipe 2.
+- Diagonisis: Indikator bahwa seseorang memiliki diabetes.
+
 Selain dari deskripsi variable, didapatkan pula informasi mengenai dataset sebagai berikut
-‐	Terdapat 1 kolom non-numerik dengan tipe object yaitu *Gender*. Kolom ini merupakan categorical features.
-‐	Terdapat 1 kolom numerik dengan tipe data float64 yaitu *HbA1c_level*. Kolom ini merupakan numerical features.
-‐	Terdapat 7 kolom numerik dengan tipe data int64, yaitu: * Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis *. Kolom ini merupakan numerical features.
+- Terdapat 1 kolom non-numerik dengan tipe object yaitu *Gender*. Kolom ini merupakan categorical features.
+- Terdapat 1 kolom numerik dengan tipe data float64 yaitu *HbA1c_level*. Kolom ini merupakan numerical features.
+- Terdapat 7 kolom numerik dengan tipe data int64, yaitu: * Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis *. Kolom ini merupakan numerical features.
 
 Pada tahap selanjutnya, dilakukan Exploratory Data Analysis (EDA) untuk memahami dan menganalisis karakteristik dari data yang digunakan. EDA bertujuan untuk menemukan pola, mengidentifikasi anomali, serta memeriksa asumsi-asumsi yang ada pada dataset. Terdapat dua metode yang digunakan yaitu metode bersifat univariate yang melibatkan satu variate atau variabel dan multivariate yang melibatkan dua atau lebih variabel.  
 
 ## Data Preparation
 Pada tahap ini, dilakukan data preparation atau persiapan data yang bertujuan untuk melakukan transformasi pada dataset. Transformasi ini dilakukan agar data memiliki format atau bentuk yang sesuai dan cocok untuk proses pemodelan dalam machine learning. Beberapa langkah yang umum dilakukan dalam data preparation antara lain:
-‐	Encoding Fitur Kategori yang dilakukan dengan menggunakan Teknik * one-hot-encoding*. Teknik ini digunakan untuk mengubah variabel kategorikal menjadi bentuk biner (0 atau 1) sehingga dapat diolah oleh algoritma machine learning. Pengaplikasian Teknik ini dilakukan terhadap fitur Gender
-‐	Pembagian dataset dengan fungsi train_test_split agar dataset menjadi data latih (train) dan data uji (test). Teknik ini digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya, sehingga dapat memeriksa apakah model tersebut overfitting atau generalisasi dengan baik pada data baru.
-‐	Standardisasi dapat membantu untuk membuat variabel memiliki skala yang serupa, sehingga algoritma machine learning yang berbasis jarak atau optimasi dapat bekerja dengan lebih efisien dan akurat. Proses transformasi data ini mengubah nilai rata-rata (mean) menjadi 0 dan nilai standar deviasi menjadi 1.
+- Encoding Fitur Kategori yang dilakukan dengan menggunakan Teknik * one-hot-encoding*. Teknik ini digunakan untuk mengubah variabel kategorikal menjadi bentuk biner (0 atau 1) sehingga dapat diolah oleh algoritma machine learning. Pengaplikasian Teknik ini dilakukan terhadap fitur Gender
+- Pembagian dataset dengan fungsi train_test_split agar dataset menjadi data latih (train) dan data uji (test). Teknik ini digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya, sehingga dapat memeriksa apakah model tersebut overfitting atau generalisasi dengan baik pada data baru.
+- Standardisasi dapat membantu untuk membuat variabel memiliki skala yang serupa, sehingga algoritma machine learning yang berbasis jarak atau optimasi dapat bekerja dengan lebih efisien dan akurat. Proses transformasi data ini mengubah nilai rata-rata (mean) menjadi 0 dan nilai standar deviasi menjadi 1.
 
 
 ## Modeling
 Model development dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model machine learning dengan tiga algoritma yaitu 
 1.	K-Nearest Neighbor (KNN)
-   KNN bekerja dengan mengukur jarak antara sebuah sampel tertentu dengan seluruh sampel dalam set pelatihan, lalu memilih k-tetangga terdekat. Algoritma KNN memanfaatkan konsep 'kesamaan fitur' untuk menentukan prediksi nilai dari data baru. Dengan cara ini, setiap data baru akan diberikan nilai berdasarkan seberapa miripnya dengan titik-titik dalam set data pelatihan. 
+      KNN bekerja dengan mengukur jarak antara sebuah sampel tertentu dengan seluruh sampel dalam set pelatihan, lalu memilih k-tetangga terdekat. Algoritma KNN memanfaatkan konsep 'kesamaan fitur' untuk menentukan prediksi nilai dari data baru. Dengan cara ini, setiap data baru akan diberikan nilai berdasarkan seberapa miripnya dengan titik-titik dalam set data pelatihan. 
 
 3.	Random Forest
-   Random Forest termasuk dalam kategori model ensemble. Terdiri dari berbagai pohon keputusan (decision tree), Random Forest menggunakan pendekatan pemilihan data dan fitur secara acak. 
+      Random Forest termasuk dalam kategori model ensemble. Terdiri dari berbagai pohon keputusan (decision tree), Random Forest menggunakan pendekatan pemilihan data dan fitur secara acak. 
 
 5.	Boosting Algorithm
-   Boosting Algorithm bekerja dengan membuat model awal dari data latih. Kemudian, algoritma ini membuat model berikutnya yang fokus untuk mengkoreksi kesalahan yang dilakukan oleh model sebelumnya. Proses ini berulang dengan penambahan model baru sampai prediksi pada data latih menjadi optimal atau telah mencapai jumlah model maksimum yang telah ditentukan.
+      Boosting Algorithm bekerja dengan membuat model awal dari data latih. Kemudian, algoritma ini membuat model berikutnya yang fokus untuk mengkoreksi kesalahan yang dilakukan oleh model sebelumnya. Proses ini berulang dengan penambahan model baru sampai prediksi pada data latih menjadi optimal atau telah mencapai jumlah model maksimum yang telah ditentukan.
 
 ## Evaluation
 Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. 
