@@ -69,8 +69,11 @@ Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi da
 ![mse](https://user-images.githubusercontent.com/88262711/195906174-0257deb8-0fab-4f64-af01-7509cf371c2c.jpeg)
 
 Keterangan:
+
 N = jumlah dataset
+
 yi = nilai sebenarnya
+
 y_pred = nilai prediksi
 
 sebelum menghitung nilai MSE dalam model, perlu dilakukan proses scaling fitur numerik pada data uji terlebih dahulu untuk memastikan bahwa fitur-fitur numerik dalam data test memiliki skala yang serupa dengan data train, yang telah di-scaling sebelumnya. Selanjutnya, dilakukan proses evaluasi ketiga model dengan metrik MSE dan didapatkan hasil ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/c3e7fffe-dd38-4a27-bb4d-9424e34a7195)
