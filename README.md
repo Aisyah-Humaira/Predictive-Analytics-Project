@@ -80,12 +80,37 @@ x = setiap nilai dalam fitur numerik
 ![Standarisasi](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/930b715d-efe9-4bac-a6aa-708b4ef47b13)
 
 ## Modeling
-Model development dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model machine learning dengan tiga algoritma yaitu 
-1.	K-Nearest Neighbor (KNN): bekerja dengan mengukur jarak antara sebuah sampel tertentu dengan seluruh sampel dalam set pelatihan, lalu memilih k-tetangga terdekat. Algoritma KNN memanfaatkan konsep 'kesamaan fitur' untuk menentukan prediksi nilai dari data baru. Dengan cara ini, setiap data baru akan diberikan nilai berdasarkan seberapa miripnya dengan titik-titik dalam set data pelatihan. 
+Model development dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model machine learning dengan tiga algoritma yaitu K-Nearest Neighbor, Random Forest, dan Boosting Algorithm
 
-3.	Random Forest: termasuk dalam kategori model ensemble. Terdiri dari berbagai pohon keputusan (decision tree), Random Forest menggunakan pendekatan pemilihan data dan fitur secara acak. 
+### [K-Nearest Neighbor (KNN)](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/)
+K-Nearest Neighbor merupakan salah satu algoritma dasar dalam machine learning yang digunakan untuk regresi dan klasifikasi. Dalam algoritma KNN, diasumsikan bahwa data yang serupa cenderung berada dalam jarak yang dekat atau bertetangga, sehingga data-data dengan karakteristik yang mirip akan berada di lokasi yang berdekatan. Tujuan dari KNN adalah untuk menemukan tetangga terdekat dari titik kueri yang diberikan, dengan demikian kita dapat menentukan label kelas untuk titik tersebut berdasarkan mayoritas label kelas dari tetangga terdekatnya. KNN hanya memerlukan dua parameter utama, yaitu nilai k dan metrik jarak, yang jumlahnya relatif lebih sedikit dibandingkan dengan kebanyakan algoritma machine learning lainnya.
 
-5.	Boosting Algorithm : bekerja dengan membuat model awal dari data latih. Kemudian, algoritma ini membuat model berikutnya yang fokus untuk mengkoreksi kesalahan yang dilakukan oleh model sebelumnya. Proses ini berulang dengan penambahan model baru sampai prediksi pada data latih menjadi optimal atau telah mencapai jumlah model maksimum yang telah ditentukan.
+Tahapan Langkah algoritma metode KNN: 
+1. Model KNN untuk regresi diinisialisasi menggunakan *KNeighborsRegressor* dengan jumlah tetangga terdekat (*n_neighbors*) sebanyak 10.
+2. Model KNN yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan (*X_train*) dan label pelatihan (*y_train*). Proses pelatihan ini bertujuan agar model dapat memahami pola dan hubungan antara fitur (*X*) dan label (*y*).
+3. Performa model dievaluasi menggunakan metrik *Mean Squared Error* (*MSE*)
+   
+### [Random Forest (RF)](https://kantinit.com/kecerdasan-buatan/random-forest-pengertian-cara-kerja-dan-contoh-penerapannya/) 
+Random Forest adalah salah satu metode yang memiliki kemiripan dengan *Decision Tree*. Metode ini merupakan salah satu algoritma yang paling populer karena keakuratannya, kemudahannya, dan fleksibilitasnya. Kemampuannya untuk digunakan dalam klasifikasi dan regresi, ditambah dengan sifat nonlinernya, membuatnya sangat mudah beradaptasi dengan berbagai jenis data dan situasi. Untuk mendapatkan prediksi yang akurat dan konsisten, random forest menggunakan metode bagging, yaitu teknik penggabungan beberapa meta algoritma untuk meningkatkan akurasi algoritma machine learning. Metode bagging ini mengambil sampel acak dari dataset melalui proses raw sampling. Setelah itu, sampel yang diperoleh dari raw sampling digunakan kembali dengan penggantian, proses ini dikenal sebagai bootstrap, dan menghasilkan sampel bootstrap. Setiap model kemudian dilatih secara mandiri hingga menghasilkan prediksi. Hasil akhir ditentukan berdasarkan prediksi mayoritas dari semua model. Secara sederhana, prediksi dari setiap model dikumpulkan, dan kemudian dianalisis untuk menentukan hasil mayoritas. Proses ini disebut agregasi.
+
+Tahapan Langkah algoritma metode Random Forest: 
+1. Model Random Forest untuk regresi (*RandomForestRegressor*) diinisialisasi dengan parameter sebagai berikut:
+   - *n_estimators* = 50 (Jumlah pohon keputusan dalam hutan)
+   - *max_depth* = 16 (Kedalaman maksimal dari setiap pohon keputusan)
+   - *random_state* = 55 (Seed untuk pengacakan agar hasil dapat direproduksi)
+   - *n_jobs* = -1 (Menggunakan semua core prosesor yang tersedia untuk pelatihan)
+2.  Model Random Forest yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan dan label pelatihan.
+3.  Performa model dievaluasi menggunakan metrik *Mean Squared Error* (*MSE*)
+   
+### [Boosting Algorithm](https://aws.amazon.com/id/what-is/boosting/) 
+Boosting Algorithm adalah teknik dalam machine learning yang digunakan untuk mengurangi kesalahan dalam prediksi data. Teknik ini meningkatkan akurasi dan kinerja model machine learning dengan mengubah beberapa model lemah menjadi satu model pembelajaran yang kuat. AdaBoost (Adaptive Boosting) adalah salah satu metode boosting yang dikembangkan pertama kali. Dalam AdaBoost, setiap data awalnya diberi bobot yang sama. Setelah setiap iterasi atau pembentukan pohon keputusan, bobot dari setiap data akan disesuaikan secara otomatis. Bobot lebih akan diberikan kepada data yang salah diklasifikasikan untuk diperbaiki pada iterasi berikutnya. Proses ini akan diulang hingga kesalahan prediksi, atau selisih antara nilai sebenarnya dan prediksi, berada di bawah tingkat kesalahan yang dapat diterima.
+
+Tahapan Langkah algoritma metode Boosting Algorithm:
+1. Model AdaBoostRegressor diinisialisasi dengan parameter sebagai berikut:
+   - *learning_rate* = 0.05 (Tingkat pembelajaran yang mengontrol seberapa besar kontribusi dari setiap model lemah dalam gabungan model akhir)
+   - *random_state* = 55 (Seed untuk pengacakan agar hasil dapat direproduksi)
+3. Model Random Forest yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan dan label pelatihan.
+4. Performa model dievaluasi menggunakan metrik *Mean Squared Error* (*MSE*)
 
 ## Evaluation
 Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi data numerik adalah Mean Squared Error (MSE). MSE mengukur perbedaan antara prediksi model dengan nilai aktual dari data, lalu mengkuadratkan perbedaan tersebut untuk menghindari nilai selisih yang negatif. Setelah itu, perbedaan kuadrat dari setiap data dijumlahkan dan diambil rata-ratanya untuk mendapatkan nilai MSE [[3]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880).
