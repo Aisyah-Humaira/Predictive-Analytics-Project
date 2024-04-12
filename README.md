@@ -69,9 +69,7 @@ Pada tahap ini, dilakukan persiapan data yang bertujuan untuk melakukan transfor
 - Pembagian dataset dengan fungsi *train_test_split* agar dataset menjadi data latih (*train*) dan data uji (*test*) dengan proporsi yang umum digunakan sebesar 80:20. Teknik ini digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya, sehingga dapat memeriksa apakah model tersebut *overfitting* atau generalisasi dengan baik pada data baru. 
 - Standardisasi dapat membantu untuk membuat variabel memiliki skala yang serupa, sehingga algoritma *machine learning* yang berbasis jarak atau optimasi dapat bekerja dengan lebih efisien dan akurat. Proses transformasi data ini mengubah nilai rata-rata (*mean*) menjadi 0 dan nilai standar deviasi menjadi 1. Penggunaan standardisasi, dapat memastikan bahwa semua fitur memiliki skala yang serupa, yang dapat meningkatkan kinerja dan meningkatkan interpretasi model. Pada teknik ini menggunakan 
 
-```math
-z = \frac{x - μ}{σ}
-```
+$$z = \frac{x - μ}{σ}$$
 
 Keterangan:
 
@@ -83,6 +81,7 @@ x = setiap nilai dalam fitur numerik
 
 dari perhitungan diatas didapatkan hasil sebagai berikut
 
+Tabel 1. Hasil Standardisasi Data
 || Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
 | --- | --- | --- | ------- | --- | ----------- | ------- |
 | **18362** | 1.700510 | 0.280882 | 3.294713 | 0.491845 | 0.602952 | -0.674932 |
@@ -94,6 +93,7 @@ dari perhitungan diatas didapatkan hasil sebagai berikut
 
 Selanjutnya dilakukan pengecek nilai mean yang diubah menjadi 0 dan nilai standar deviasi menjadi 1 setelah proses standarisasi dimana hasilnya sebagai berikut
 
+Tabel 2. Hasil *Descriptive Statistics* Setelah Standarisasi
 | | Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
 | --- | --- | --- | ------- | --- | ----------- | ------- |
 | **count** | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 |
@@ -141,9 +141,7 @@ Tahapan Langkah algoritma metode Boosting Algorithm:
 ## Evaluation
 Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi data numerik adalah *Mean Squared Error* (MSE). MSE mengukur perbedaan antara prediksi model dengan nilai aktual dari data, lalu mengkuadratkan perbedaan tersebut untuk menghindari nilai selisih yang negatif. Setelah itu, perbedaan kuadrat dari setiap data dijumlahkan dan diambil rata-ratanya untuk mendapatkan nilai [MSE](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880).
 
-```math
-MSE = \frac{1}{N} \sum_{k=1}^n \left( y_i - \hat{y} \right)^2
-```
+$$MSE = \frac{1}{N} \sum_{k=1}^n \left( y_i - \hat{y} \right)^2$$
 
 Keterangan:
 
@@ -157,13 +155,14 @@ sebelum menghitung nilai MSE dalam model, perlu dilakukan proses *scaling* fitur
 
 Hasil evaluasi pada data train dan data test adalah sebagai berikut.
 
+Tabel 3. Hasil Evaluasi Data Ketiga Model
 || train | test | 
 | --- | --- | --- |
 | **KNN** | 0.027474 | 0.031791 | 
 | **RF** | 0.015403 | 0.026833 | 
 | **Boosting** | 0.031805 | 0.030721 | 
 
-Untuk memudahkan melihat hasil, dibuat plot metrik tersebut dengan menggunakan *bar chart* sehingga didapatkan hasilnya seperti dibawah ini:
+Untuk memudahkan melihat hasil dari tabel 3, dibuat plot metrik tersebut dengan menggunakan *bar chart* sehingga didapatkan hasilnya seperti dibawah ini:
 
 ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/c3e7fffe-dd38-4a27-bb4d-9424e34a7195)
 
@@ -173,11 +172,12 @@ Dari gambar 3, terlihat bahwa model *Random Forest* (RF) memberikan nilai eror y
 
 Untuk mengujinya, dibuat prediksi menggunakan beberapa model *machine learning* yang telah dilatih sebelumnya terhadap salah satu baris data. Proses ini memberikan gambaran tentang bagaimana masing-masing model memprediksi data yang diberikan.
 
+Tabel 4. Hasil Prediksi Terhadap Model
 || y_true | test | test | test | 
 | --- | --- | --- | --- | --- |
 | **71760** | 0 | 0.1 | 0.05 | 0.18 |
 
-Terlihat bahwa prediksi dengan *Random Forest* (RF) memberikan hasil yang paling mendekati nilai benar (*y_true*).
+Terlihat pada tabel 4 bahwa prediksi dengan *Random Forest* (RF) memberikan hasil yang paling mendekati nilai benar (*y_true*).
 
 ## Conclusion
 Dari projek Machine Learning Terapan yang telah dikerjakan mengenai prediksi penyakit diabetes dapat disimpulkah:
