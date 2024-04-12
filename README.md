@@ -173,7 +173,7 @@ Dari gambar 3, terlihat bahwa model *Random Forest* (RF) memberikan nilai eror y
 Untuk mengujinya, dibuat prediksi menggunakan beberapa model *machine learning* yang telah dilatih sebelumnya terhadap salah satu baris data. Proses ini memberikan gambaran tentang bagaimana masing-masing model memprediksi data yang diberikan.
 
 Tabel 4. Hasil Prediksi Terhadap Model
-|| y_true | test | test | test | 
+|| y_true | prediksi_KNN | prediksi_RF | prediksi_Boosting | 
 | --- | --- | --- | --- | --- |
 | **71760** | 0 | 0.1 | 0.05 | 0.18 |
 
