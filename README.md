@@ -83,11 +83,27 @@ x = setiap nilai dalam fitur numerik
 
 dari perhitungan diatas didapatkan hasil sebagai berikut
 
-![Standarisasi](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/930b715d-efe9-4bac-a6aa-708b4ef47b13)
+|| Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
+| --- | --- | --- | ------- | --- | ----------- | ------- |
+| **18362** | 1.700510 | 0.280882 | 3.294713 | 0.491845 | 0.602952 | -0.674932 |
+| **7629** | -0.722260	 | 2.018572 | -0.303517 | 0.032739 | 0.142361 | -0.674932 |
+| **24394** | 0.668589 | 2.887417 | -0.303517 | 0.395191 | 0.418716 | -0.674932 |
+| **14573** | 0.354526 | 0.715304 | -0.303517 | 1.482546 | -0.686703 | 1.481630 |
+| **6118** | 0.623723 | -0.008733 | -0.303517 | -0.208895 | 3.182264 | -0.674932 |
+
 
 Selanjutnya dilakukan pengecek nilai mean yang diubah menjadi 0 dan nilai standar deviasi menjadi 1 setelah proses standarisasi dimana hasilnya sebagai berikut
 
-![Cek Standarisasi](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/391211dc-9353-4e45-aa50-b07fc938e9aa)
+| | Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
+| --- | --- | --- | ------- | --- | ----------- | ------- |
+| **count** | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 |
+| **mean** | -0.0000	| 0.0000 | -0.0000 | -0.0000 | 0.0000 | -0.0000 |
+| **std** | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| **min** | -1.8888 | -2.4705 | -0.3035 | -1.4171 | -1.8842	 | -0.6749 |
+| **25%** | -0.8120	 | -0.5880	 | -0.3035 | -0.9338	 | -0.6867 | -0.6749 |
+| **50%** | 0.0405 | -0.0087 | -0.3035 | 0.0327 | 0.2345	| -0.6749 |
+| **75%** | 0.8032 | 0.4257 | -0.3035 | 0.4918 | 0.6030 | 1.4816 |
+| **max** | 1.7005 | 9.2589 | 3.2947 | 3.8989 | 5.9458 | 1.4816 |
 
 ## Modeling
 *Model development* dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model *machine learning* dengan tiga algoritma yaitu *K-Nearest Neighbor, Random Forest, dan Boosting Algorithm*
@@ -141,7 +157,11 @@ sebelum menghitung nilai MSE dalam model, perlu dilakukan proses *scaling* fitur
 
 Hasil evaluasi pada data train dan data test adalah sebagai berikut.
 
-![Evaluasi](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/f2989888-2044-4407-bbd9-5ee559c5c7d4)
+|| train | test | 
+| --- | --- | --- |
+| **KNN** | 0.027474 | 0.031791 | 
+| **RF** | 0.015403 | 0.026833 | 
+| **Boosting** | 0.031805 | 0.030721 | 
 
 Untuk memudahkan melihat hasil, dibuat plot metrik tersebut dengan menggunakan *bar chart* sehingga didapatkan hasilnya seperti dibawah ini:
 
@@ -153,7 +173,9 @@ Dari gambar 3, terlihat bahwa model *Random Forest* (RF) memberikan nilai eror y
 
 Untuk mengujinya, dibuat prediksi menggunakan beberapa model *machine learning* yang telah dilatih sebelumnya terhadap salah satu baris data. Proses ini memberikan gambaran tentang bagaimana masing-masing model memprediksi data yang diberikan.
 
-![Prediksi](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/db3aa5db-f9cd-4cc4-9771-e47d49eeb21d)
+|| y_true | test | test | test | 
+| --- | --- | --- | --- | --- |
+| **71760** | 0 | 0.1 | 0.05 | 0.18 |
 
 Terlihat bahwa prediksi dengan *Random Forest* (RF) memberikan hasil yang paling mendekati nilai benar (*y_true*).
 
