@@ -1,87 +1,87 @@
-# Laporan Proyek Machine Learning - Aisyah Humaira
+# Machine Learning Project
 
-## Domain Proyek
+## Project Domain
 ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/768bb849-7586-4158-8a52-c8f867d405b2)
 
-Diabetes merupakan salah satu penyakit kronis yang paling umum dikenal di seluruh dunia dan dapat menimbulkan risiko kesehatan yang serius jika tidak dikelola dengan tepat. Menurut data yang diperoleh sekitar tahun 2019, prevalensi diabetes global diperkirakan mencapai 9,3%, atau sekitar 463 juta orang di seluruh dunia. Proyeksi untuk masa depan menunjukkan tren peningkatan, dengan estimasi mencapai 10,2% atau sekitar 578 juta orang pada tahun 2030, dan meningkat lagi menjadi 10,9% atau sekitar 700 juta orang pada tahun 2045. Selain itu, didapatkan bahwa separuh dari individu yang hidup dengan diabetes, tepatnya sekitar 50,1%, tidak menyadari bahwa mereka sebenarnya menderita penyakit ini. Hal ini menunjukkan betapa pentingnya upaya deteksi dini dan kesadaran akan gejala diabetes. Dampak diabetes yang tidak terkontrol dapat sangat merusak bagi kesehatan tubuh secara keseluruhan. Banyak organ tubuh, termasuk ginjal, mata, jantung, dan sistem saraf, dapat mengalami kerusakan serius akibat komplikasi diabetes yang tidak terdeteksi atau dikelola dengan baik. Oleh karena itu, sangat penting untuk melakukan diagnosis diabetes dengan cepat dan akurat guna mencegah komplikasi serius dan memastikan kualitas hidup yang lebih baik bagi penderita diabetes [[1]](https://www.sciencedirect.com/science/article/pii/S1110866524000045).
+Diabetes is one of the most common chronic diseases recognized worldwide and can pose serious health risks if not managed appropriately. According to data obtained around 2019, the global prevalence of diabetes was estimated at 9.3% or approximately 463 million people worldwide. Projections for the future show an increasing trend, with estimates reaching 10.2% or approximately 578 million people by 2030, and increasing again to 10.9% or approximately 700 million people by 2045. In addition, it was found that half of the individuals living with diabetes, 50.1% to be exact, are unaware that they have the disease. This shows the importance of early detection and awareness of diabetes symptoms. The impact of uncontrolled diabetes can be devastating to the body's overall health. Many of the body's organs, including the kidneys, eyes, heart, and nervous system, can suffer serious damage due to complications of diabetes that are not detected or managed properly. Therefore, it is very important to diagnose diabetes quickly and accurately to prevent serious complications and ensure a better quality of life for people with diabetes[[1]](https://www.sciencedirect.com/science/article/pii/S1110866524000045).
 
-Banyak teknik *machine learning* (ML) yang digunakan di sektor medis untuk mendeteksi dan memprediksi gangguan kesehatan. Salah satu penyakit yang menggunakan teknik ML untuk menemukan pengobatan yang paling efektif adalah diabetes. Teknik-teknik *machine learning* diterapkan di hampir setiap bidang kehidupan untuk mengatasi masalah praktis karena kemampuannya untuk menghasilkan hasil yang konsisten, dapat diandalkan, dan akurat. Dengan demikian, penggunaan ML dalam diagnosa diabetes dapat mempercepat proses identifikasi penyakit, mengurangi risiko kesalahan manusia, dan memastikan pasien mendapatkan pengobatan yang sesuai dengan kondisinya [[2]](https://www.sciencedirect.com/science/article/pii/S2772442523001405).
+Many machine learning (ML) techniques are used in the medical sector to detect and predict health problems. One of the diseases for which ML techniques are used to find the most effective treatment is diabetes. Machine learning techniques are applied in almost every field of life to solve practical problems due to their ability to produce consistent, reliable, and accurate results. Thus, the use of ML in diabetes diagnosis can speed up the disease identification process, reduce the risk of human error, and ensure patients get the treatment that suits their condition[[2]](https://www.sciencedirect.com/science/article/pii/S2772442523001405).
 
 ## Business Understanding
 
 ### Problem Statements
-- Bagaimana cara mendapatkan model *machine learning* untuk memprediksi penyakit diabetes?
-- *Model development* apa yang memberikan hasil dengan error paling kecil untuk memprediksi penyakit diabetes?
+- How to get a machine learning model to predict diabetes?
+- Which model development gives the smallest error for predicting diabetes?
 
 ### Goals
-- Mendapatkan model *machine learning* yang dapat digunakan untuk memprediksi penyakit diabetes.
-- Mengetahui *model development* yang memberikan hasil dengan error paling kecil untuk memprediksi penyakit diabetes.
+- Obtain a machine learning model that can be used to predict diabetes.
+- Find out the development model that gives the results with the smallest error to predict diabetes.
 
 ## Data Understanding
-Dataset yang digunakan dalam proyek ini diperoleh dari situs Kaggle mengenai [Simple Feature To Detect Diabetes](https://www.kaggle.com/datasets/simaanjali/diabetes-simple-diagnosis). Dataset ini terdiri dari 88380 baris dan 9 kolom. 
+The dataset used in this project was obtained from Kaggle's website on [Simple Feature To Detect Diabetes](https://www.kaggle.com/datasets/simaanjali/diabetes-simple-diagnosis). This dataset consists of 88380 rows and 9 columns. 
 
-Berdasarkan informasi dari Kaggle, variabel-variabel pada dataset adalah sebagai berikut:
-- ***Age***: Mewakili usia pasien dalam tahun. Usia dapat menjadi faktor risiko untuk diabetes, karena risiko diabetes meningkat seiring bertambahnya usia.
-- ***Gender***: Menunjukkan jenis kelamin pasien, yang dapat menjadi faktor dalam prediksi diabetes. Beberapa studi menyarankan bahwa wanita mungkin memiliki risiko yang berbeda dibandingkan pria dalam mengembangkan diabetes.
-- ***Body Mass Index (BMI)***: BMI adalah ukuran yang menggunakan tinggi dan berat badan seseorang untuk menentukan apakah mereka berada dalam kategori berat badan normal, kelebihan berat badan, atau obesitas. BMI yang tinggi dikaitkan dengan risiko diabetes yang lebih tinggi.
-- ***High Blood Pressure (High_BP)***: Indikator apakah seorang pasien menderita hipertensi. Tekanan darah tinggi adalah faktor risiko yang signifikan untuk diabetes tipe 2.
-- ***Fasting Blood Glucose (FBS)***: Mewakili tingkat glukosa dalam darah setelah puasa semalaman. Tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes.
-- ***HbA1c (HbA1c_level)***: Pengukuran rata-rata tingkat gula darah selama 2-3 bulan terakhir. Ini adalah indikator penting untuk diagnosis dan pengelolaan diabetes.
-- ***Smoking***: Menunjukkan apakah pasien merokok atau tidak. Merokok dapat menjadi faktor risiko tambahan untuk diabetes tipe 2.
-- ***Diagonisis***: Indikator bahwa seseorang memiliki diabetes.
+Based on information from Kaggle, the variables in the dataset are as follows:
+- ***Age***: Represents the patient's age in years. Age can be a risk factor for diabetes, as the risk of diabetes increases with age.
+- ***Gender***: Indicates the gender of the patient, which can be a factor in the prediction of diabetes. Some studies suggest that women may have a different risk than men in developing diabetes.
+- ***Body Mass Index (BMI)***: BMI is a measure that uses a person's height and weight to determine whether they are in the normal weight, overweight, or obese category. A high BMI is associated with a higher risk of diabetes.
+- ***High Blood Pressure (High_BP)***: An indicator of whether a patient has hypertension. High blood pressure is a significant risk factor for type 2 diabetes.
+- ***Fasting Blood Glucose (FBS)***: Represents the level of glucose in the blood after an overnight fast. A high fasting blood sugar level may indicate a risk of diabetes or prediabetes.
+- ***HbA1c (HbA1c_level)***: A measurement of the average blood sugar level over the past 2-3 months. It is an important indicator for the diagnosis and management of diabetes.
+- ***Smoking***: Indicates whether the patient smokes or not. Smoking can be an additional risk factor for type 2 diabetes.
+- ***Diabetes***: An indicator that a person has diabetes.
 
-Selain dari deskripsi variable, didapatkan pula informasi mengenai dataset sebagai berikut
-- Terdapat 1 kolom non-numerik dengan tipe object yaitu *Gender*. Kolom ini merupakan *categorical features*.
-- Terdapat 1 kolom numerik dengan tipe data float64 yaitu *HbA1c_level*. Kolom ini merupakan *numerical features*.
-- Terdapat 7 kolom numerik dengan tipe data int64, yaitu: *Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, dan Diagnosis*. Kolom ini merupakan *numerical features*.
+Apart from the variable description, the following information is also obtained about the dataset- There is 1 non-numeric column with object type, namely *Gender*. This column is a *categorical feature*.
+- There is 1 numeric column with float64 data type, namely *HbA1c_level*. This column is a *numerical feature*.
+- There are 7 numeric columns with int64 data type, namely: *Unnamed: 0, Age, BMI, High_BP, FBS, Smoking, and Diagnosis*. These columns are *numerical features*.
 
-Pada tahap selanjutnya, dilakukan *Exploratory Data Analysis* (EDA) untuk memahami dan menganalisis karakteristik dari data yang digunakan. EDA bertujuan untuk menemukan pola, mengidentifikasi anomali, serta memeriksa asumsi-asumsi yang ada pada dataset. Terdapat dua metode yang digunakan yaitu metode bersifat *univariate*  dan *multivariate*.
+## Exploratory Data Analysis (EDA)
+In the next step, Exploratory Data Analysis (EDA) is conducted to understand and analyze the characteristics of the data used. EDA aims to find patterns, identify anomalies, and check the assumptions in the dataset. There are two methods used, namely univariate and multivariate methods.
 
-1. *Univariate Analysis* melibatkan satu *variate* atau variabel. Pada proses analisis terhadap fitur kategori didapatkan yaitu
+1. *Univariate Analysis* involves one variate or variable. In the process of analyzing category features, the following figure displays the data obtained.
    
 ![grafik_gender](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/16b8144c-e1dd-44de-a677-353d791c0492)
 
-Gambar 1. Grafik Gender
+Figure 1. Gender Chart
 
 
-Pada gambar 1, terdapat 3 fitur *gender* yaitu *Female, Male,* dan *Other*. Dari data persentase dapat disimpulkan bahwa gender yang paling banyak adalah *Female* dengan persante sebesar 58.10%, kemudian *gender Male* sebesar 41.88%, dan terakhir *other* hanya berkisar 0.02%.
+In Figure 1, there are 3 gender features, namely *Female, Male,* and *Other*. From the percentage data, it can be concluded that the most common gender is *Female* with a percentage of 58.10%, then gender *Male* is 41.88%, and finally *other* is only around 0.02%.
 
-Selanjutnya, untuk fitur numerik didapatkan 
+Furthermore, for the numerical features, the following figure shows the data obtained.
 
 ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/991f9797-6757-4479-8a0e-d06b73870c37)
 
-Gambar 2. Histogram Fitur Numerik
+Figure 2. Histogram of Numerical Features
 
-Pada gambar 2, terlihat pada fitur *Age* sampel paling banyak pada umur 80. Lalu pada fitur *BMI*, paling banyak sampel memiliki berat badan pada kisaran 30 kg. Kemudian pada sampel *High_BP*, terlihat jika kebanyak sampel memiliki tekanan darah tinggi. Selanjutnya pada fitur *FBS*, dapat dilihat lebih banyak sampel yang memiliki tingkat glukosa dalam darah lebih dari 150. Kemudian untuk fitur *HbA1c_level*, rata-rata tingkat gula darah selama 2-3 bulan terakhir paling banyak pada kisaran 6. Lalu pada fitur *Smoking*, lebih banyak sampel yang merokok daripada tidak. Terakhir pada fitur Diagnosis, terlihat jika lebih banyak sampel yang terdiagnosis diabetes.
+In Figure 2, it can be seen that the *Age* feature has the most samples at the age of 80. Then in the *BMI* feature, most samples have a body weight in the range of 30 kg. Then in the *High_BP* sample, it can be seen that most samples have high blood pressure. Then in the *FBS* feature, it can be seen that more samples have a blood glucose level of more than 150. Then for the *HbA1c_level* feature, the average blood sugar level for the last 2-3 months is mostly in the range of 6. Then in the *Smoking* feature, more samples smoke than not. Finally, in the Diagnosis feature, it can be seen that more samples were diagnosed with diabetes.
 
-2. *Multivariate Analysis* melibatkan dua atau lebih variabel. Pada proses ini didapatkan hasil yaitu
+2. *Multivariate Analysis* involves two or more variables. In this process, the following figure shows the data obtained.
    
 ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/00add511-e329-48e1-95a8-a5ca7898d393)
 
-Gambar 3. Korelasi Antar Fitur
+Figure 3. Correlation Among Features
 
-Dari gambar 3 bisa dilihat evaluasi skor korelasi antar fitur. jika melihat korelasi terhadap diagnosis maka fitur yang memiliki skor tertinggi adalah *FBS* atau *Fasting Blood Glucose* yang memeperlihatkan tingkat glukosa dalam darah setelah puasa semalaman dimana tingkat gula darah puasa yang tinggi dapat menunjukkan risiko diabetes atau prediabetes. Selain itu, terdapat fitur *HbA1c_level* yang memiliki skor tertinggi, dimana indikator ini merupakan rata-rata tingkat gula darah selama 2-3 bulan terakhir.
+From Figure 3, we can see the evaluation of the correlation score between features. When looking at the correlation to diagnosis, the feature that has the highest score is *FBS* or *Fasting Blood Glucose* which shows the level of glucose in the blood after fasting overnight where high fasting blood sugar levels can indicate the risk of diabetes or prediabetes. In addition, the *HbA1c_level* feature has the highest score, which is the average blood sugar level over the last 2-3 months.
 
 ## Data Preparation
-Pada tahap ini, dilakukan persiapan data yang bertujuan untuk melakukan transformasi pada dataset. Transformasi ini dilakukan agar data memiliki format atau bentuk yang sesuai dan cocok untuk proses pemodelan dalam machine learning. Beberapa langkah yang umum dilakukan dalam data preparation antara lain:
+In this step, data preparation is carried out which aims to transform the dataset. This transformation is done so that the data has a format or form that is appropriate and suitable for the modeling process in machine learning. Some common steps in data preparation include:
 
-- Encoding Fitur Kategori yang dilakukan dengan menggunakan Teknik *one-hot-encoding*. Teknik ini digunakan untuk mengubah variabel kategorikal menjadi bentuk biner (0 atau 1) sehingga dapat diolah oleh algoritma *machine learning*. Pengaplikasian Teknik ini dilakukan terhadap fitur *Gender*
-- Pembagian dataset dengan fungsi *train_test_split* agar dataset menjadi data latih (*train*) dan data uji (*test*) dengan proporsi yang umum digunakan sebesar 80:20. Teknik ini digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya, sehingga dapat memeriksa apakah model tersebut *overfitting* atau generalisasi dengan baik pada data baru. 
-- Standardisasi dapat membantu untuk membuat variabel memiliki skala yang serupa, sehingga algoritma *machine learning* yang berbasis jarak atau optimasi dapat bekerja dengan lebih efisien dan akurat. Proses transformasi data ini mengubah nilai rata-rata (*mean*) menjadi 0 dan nilai standar deviasi menjadi 1. Penggunaan standardisasi, dapat memastikan bahwa semua fitur memiliki skala yang serupa, yang dapat meningkatkan kinerja dan meningkatkan interpretasi model. Pada teknik ini menggunakan 
+- Category Feature Encoding which is done using the *one-hot-encoding* technique. This technique is used to convert categorical variables into binary form (0 or 1) so that they can be processed by machine learning algorithms. This technique was applied to the *Gender* feature.
+- Split the dataset with the *train_test_split* function so that the dataset becomes training data (*train*) and test data (*test*) with a commonly used proportion of 80:20. This technique is used to test the performance of the model on data that has not been seen before, to check whether the model is *overfitting* or generalizing well to new data. 
+- Standardisation can help to make variables have a similar scale, so that distance-based or optimization *machine learning* algorithms can work more efficiently and accurately. This data transformation process changes the mean (*mean*) value to 0 and the standard deviation value to 1. The use of standardization can ensure that all features are similarly scaled, which can improve performance and enhance model interpretation. The technique used is based on the following equation. 
 
 $$z = \frac{x - μ}{σ}$$
 
-Keterangan:
+Notes:
 
-x = setiap nilai dalam fitur numerik
+x = each value in the numeric feature
 
-μ = Rata-rata dari sampel *training*
+μ = Average of the training samples
 
-σ = Standar deviasi dari sampel *training*
+σ = Standard deviation of training samples
 
-dari perhitungan diatas didapatkan hasil sebagai berikut
+from the above calculations, the results are obtained in the following table.
 
-Tabel 1. Hasil Standardisasi Data
+Table 1. Results of Data Standardisation
 || Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
 | --- | --- | --- | ------- | --- | ----------- | ------- |
 | **18362** | 1.700510 | 0.280882 | 3.294713 | 0.491845 | 0.602952 | -0.674932 |
@@ -91,9 +91,9 @@ Tabel 1. Hasil Standardisasi Data
 | **6118** | 0.623723 | -0.008733 | -0.303517 | -0.208895 | 3.182264 | -0.674932 |
 
 
-Selanjutnya dilakukan pengecek nilai mean yang diubah menjadi 0 dan nilai standar deviasi menjadi 1 setelah proses standarisasi dimana hasilnya sebagai berikut
+Furthermore, I checked the mean value which was changed to 0, and the standard deviation value to 1 after the standardisation process where the results were obtained in the following table.
 
-Tabel 2. Hasil *Descriptive Statistics* Setelah Standarisasi
+Table 2. Descriptive Statistics After Standardisation
 | | Age | BMI | High_BP | FBS | HbA1c_level | Smoking |
 | --- | --- | --- | ------- | --- | ----------- | ------- |
 | **count** | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 | 70704.0000 |
@@ -106,86 +106,86 @@ Tabel 2. Hasil *Descriptive Statistics* Setelah Standarisasi
 | **max** | 1.7005 | 9.2589 | 3.2947 | 3.8989 | 5.9458 | 1.4816 |
 
 ## Modeling
-*Model development* dilakukan sebagai proses pembuatan, pelatihan, dan evaluasi model untuk memprediksi atau mengklasifikasikan data berdasarkan fitur yang ada. Pada Tahapan ini akan mengembangkan model *machine learning* dengan tiga algoritma yaitu *K-Nearest Neighbor, Random Forest, dan Boosting Algorithm*
+Model development is the process of creating, training, and evaluating models to predict or classify data based on existing features. This stage will develop a machine learning model with three algorithms, namely K-Nearest Neighbor, Random Forest, and Boosting Algorithm.
 
 ### [K-Nearest Neighbor (KNN)](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/)
-***K-Nearest Neighbor*** merupakan salah satu algoritma dasar dalam *machine learning* yang digunakan untuk regresi dan klasifikasi. Dalam algoritma KNN, diasumsikan bahwa data yang serupa cenderung berada dalam jarak yang dekat atau bertetangga, sehingga data-data dengan karakteristik yang mirip akan berada di lokasi yang berdekatan. Tujuan dari KNN adalah untuk menemukan tetangga terdekat dari titik kueri yang diberikan, dengan demikian kita dapat menentukan label kelas untuk titik tersebut berdasarkan mayoritas label kelas dari tetangga terdekatnya. KNN hanya memerlukan dua parameter utama, yaitu nilai k dan metrik jarak, yang jumlahnya relatif lebih sedikit dibandingkan dengan kebanyakan algoritma *machine learning* lainnya.
+***K-Nearest Neighbor*** is one of the basic algorithms in machine learning used for regression and classification. In the KNN algorithm, it is assumed that similar data tends to be near or neighborhood and that data with similar characteristics will be nearby. The goal of KNN is to find the nearest neighbor of a given query point, thus we can determine the class label for that point based on the majority of the class labels of its nearest neighbors. KNN only requires two main parameters, namely the k value and the distance metric, which are relatively less in number compared to most other machine learning algorithms.
 
-Tahapan Langkah algoritma metode KNN: 
-1. Model KNN untuk regresi diinisialisasi menggunakan *KNeighborsRegressor* dengan jumlah tetangga terdekat (*n_neighbors*) sebanyak 10.
-2. Model KNN yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan (*X_train*) dan label pelatihan (*y_train*). Proses pelatihan ini bertujuan agar model dapat memahami pola dan hubungan antara fitur (*X*) dan label (*y*).
-3. Performa model dievaluasi menggunakan metrik *Mean Squared Error* (*MSE*)
+Steps of the KNN method algorithm: 
+1. The KNN model for regression is initialised using *KNeighborsRegressor* with the number of nearest neighbours (*n_neighbors*) of 10.
+2. The initialized KNN model is then trained using training data (*X_train*) and training labels (*y_train*). This training process aims for the model to understand the patterns and relationships between features (*X*) and labels (*y*).
+3. Model performance is evaluated using the *Mean Squared Error* (*MSE*) metric.
    
 ### [Random Forest (RF)](https://kantinit.com/kecerdasan-buatan/random-forest-pengertian-cara-kerja-dan-contoh-penerapannya/) 
-***Random Forest*** adalah salah satu metode yang memiliki kemiripan dengan *Decision Tree*. Metode ini merupakan salah satu algoritma yang paling populer karena keakuratannya, kemudahannya, dan fleksibilitasnya. Kemampuannya untuk digunakan dalam klasifikasi dan regresi, ditambah dengan sifat nonlinernya, membuatnya sangat mudah beradaptasi dengan berbagai jenis data dan situasi. Untuk mendapatkan prediksi yang akurat dan konsisten, *random forest* menggunakan metode bagging, yaitu teknik penggabungan beberapa meta algoritma untuk meningkatkan akurasi algoritma *machine learning*. Metode bagging ini mengambil sampel acak dari dataset melalui proses *raw sampling*. Setelah itu, sampel yang diperoleh dari *raw sampling* digunakan kembali dengan penggantian, proses ini dikenal sebagai *bootstrap*, dan menghasilkan sampel *bootstrap*. Setiap model kemudian dilatih secara mandiri hingga menghasilkan prediksi. Hasil akhir ditentukan berdasarkan prediksi mayoritas dari semua model. Secara sederhana, prediksi dari setiap model dikumpulkan, dan kemudian dianalisis untuk menentukan hasil mayoritas. Proses ini disebut agregasi.
+***Random Forest*** is one of the methods that has similarities with Decision Tree. It is one of the most popular algorithms due to its accuracy, simplicity, and flexibility. Its ability to be used in classification and regression, coupled with its nonlinear nature, makes it highly adaptable to different types of data and situations. To get accurate and consistent predictions, Random Forest uses the bagging method, which is a technique of combining several meta-algorithms to improve the accuracy of machine learning algorithms. This bagging method takes random samples from the dataset through a raw sampling process. After that, the samples obtained from raw sampling are reused with replacement, this process is known as bootstrapping and produces bootstrap samples. Each model is then trained independently until it produces a prediction. The final result is determined based on the majority prediction of all models. In simple terms, the predictions from each model are aggregated and then analyzed to determine the majority result. This process is called aggregation.
 
-Tahapan Langkah algoritma metode *Random Forest*: 
-1. Model *Random Forest* untuk regresi (*RandomForestRegressor*) diinisialisasi dengan parameter sebagai berikut:
-   - *n_estimators* = 50 (Jumlah pohon keputusan dalam hutan)
-   - *max_depth* = 16 (Kedalaman maksimal dari setiap pohon keputusan)
-   - *random_state* = 55 (Seed untuk pengacakan agar hasil dapat direproduksi)
-   - *n_jobs* = -1 (Menggunakan semua core prosesor yang tersedia untuk pelatihan)
-2.  Model *Random Forest* yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan dan label pelatihan.
-3.  Performa model dievaluasi menggunakan metrik *Mean Squared Error* (*MSE*)
-   
+Steps of the Random Forest method algorithm:
+1. The *Random Forest* model for regression (*RandomForestRegressor*) is initialised with the following parameters:
+   - *n_estimators* = 50 (Number of decision trees in the forest)
+   - *max_depth* = 16 (Maximum depth of each decision tree)
+   - *random_state* = 55 (Seed for randomization to make the results reproducible)
+   - *n_jobs* = -1 (Uses all available processor cores for training)
+2.  The initialized *Random Forest* model is then trained using the training data and training labels.
+3.  Model performance is evaluated using the *Mean Squared Error* (*MSE*) metric.
+      
 ### [Boosting Algorithm](https://aws.amazon.com/id/what-is/boosting/) 
-***Boosting Algorithm*** adalah teknik dalam *machine learning* yang digunakan untuk mengurangi kesalahan dalam prediksi data. Teknik ini meningkatkan akurasi dan kinerja model *machine learning* dengan mengubah beberapa model lemah menjadi satu model pembelajaran yang kuat. AdaBoost (*Adaptive Boosting*) adalah salah satu metode *boosting* yang dikembangkan pertama kali. Dalam AdaBoost, setiap data awalnya diberi bobot yang sama. Setelah setiap iterasi atau pembentukan pohon keputusan, bobot dari setiap data akan disesuaikan secara otomatis. Bobot lebih akan diberikan kepada data yang salah diklasifikasikan untuk diperbaiki pada iterasi berikutnya. Proses ini akan diulang hingga kesalahan prediksi, atau selisih antara nilai sebenarnya dan prediksi, berada di bawah tingkat kesalahan yang dapat diterima.
+***Boosting Algorithm*** is a technique in machine learning that is used to reduce errors in data prediction. It improves the accuracy and performance of machine learning models by transforming multiple weak models into one strong learning model. AdaBoost (Adaptive Boosting) is one of the first developed boosting methods. In AdaBoost, each data is initially given equal weight. After each iteration or decision tree formation, the weight of each data will be adjusted automatically. More weight will be given to misclassified data to be corrected in the next iteration. This process will be repeated until the prediction error, or the difference between the true and predicted values falls below an acceptable error level.
 
-Tahapan Langkah algoritma metode Boosting Algorithm:
-1. Model AdaBoostRegressor diinisialisasi dengan parameter sebagai berikut:
-   - *learning_rate* = 0.05 (Tingkat pembelajaran yang mengontrol seberapa besar kontribusi dari setiap model lemah dalam gabungan model akhir)
-   - *random_state* = 55 (Seed untuk pengacakan agar hasil dapat direproduksi)
-3. Model *Random Forest* yang telah diinisialisasi kemudian dilatih dengan menggunakan data pelatihan dan label pelatihan.
-4. Performa model dievaluasi menggunakan metrik *Mean Squared Error* (MSE)
+Steps of the Boosting Algorithm method algorithm:
+1. The AdaBoostRegressor model is initialized with the following parameters:
+   - *learning_rate* = 0.05 (Learning rate that controls how much each weak model contributes to the final combined model)
+   - *random_state* = 55 (Seed for randomization to make the results reproducible)
+3. The initialized *Random Forest* model is then trained using the training data and training labels.
+4.  Model performance is evaluated using the *Mean Squared Error* (MSE) metric.
 
 ## Evaluation
-Metrik evaluasi yang untuk menilai keakuratan model regresi dalam memprediksi data numerik adalah *Mean Squared Error* (MSE). MSE mengukur perbedaan antara prediksi model dengan nilai aktual dari data, lalu mengkuadratkan perbedaan tersebut untuk menghindari nilai selisih yang negatif. Setelah itu, perbedaan kuadrat dari setiap data dijumlahkan dan diambil rata-ratanya untuk mendapatkan nilai [MSE](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880).
+An evaluation metric to assess the accuracy of a regression model in predicting numerical data is the *Mean Squared Error* (MSE). MSE measures the difference between the model prediction and the actual value of the data and then squares the difference to avoid negative difference values. After that, the squared differences of each data are summed up and averaged to get a value of [MSE](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4420880).
 
 $$MSE = \frac{1}{N} \sum_{k=1}^n \left( y_i - \hat{y} \right)^2$$
 
-Keterangan:
+Notes:
 
-N = jumlah dataset
+N = number of datasets
 
-$\hat{y}$ = nilai sebenarnya
+$\hat{y}$ = actual value
 
-$`y_i`$ = nilai prediksi
+$`y_i`$ = predicted value
 
-sebelum menghitung nilai MSE dalam model, perlu dilakukan proses *scaling* fitur numerik pada data uji terlebih dahulu untuk memastikan bahwa fitur-fitur numerik dalam data test memiliki skala yang serupa dengan data train, yang telah di-scaling sebelumnya. Selanjutnya, dilakukan proses evaluasi ketiga model dengan metrik MSE.
+Before calculating the MSE value in the model, it is necessary to scale the numerical features in the test data first to ensure that the numerical features in the test data have a similar scale to the train data, which has been scaled before. Next, I evaluate the three models using the MSE metric.
 
-Hasil evaluasi pada data train dan data test adalah sebagai berikut.
+The evaluation results on the train data and test data are listed in the following table.
 
-Tabel 3. Hasil Evaluasi Data Ketiga Model
+Table 3. Data Evaluation Results of the Three Models
 || train | test | 
 | --- | --- | --- |
 | **KNN** | 0.027474 | 0.031791 | 
 | **RF** | 0.015403 | 0.026833 | 
 | **Boosting** | 0.031805 | 0.030721 | 
 
-Untuk memudahkan melihat hasil dari tabel 3, dibuat plot metrik tersebut dengan menggunakan *bar chart* sehingga didapatkan hasilnya seperti dibawah ini:
+To make it easier to see the results from Table 3, a plot of these metrics is made using a bar chart such as the results obtained in the following figure.
 
 ![image](https://github.com/Aisyah-Humaira/Dicoding-Proyek-Akhir-Machine-Learning/assets/83213518/c3e7fffe-dd38-4a27-bb4d-9424e34a7195)
 
-Gambar 3. Grafik Evaluasi Metrik
+Figure 3: Metric Evaluation Chart
 
-Dari gambar 3, terlihat bahwa model *Random Forest* (RF) memberikan nilai eror yang paling kecil sedangkan model dengan algoritma *K-Nearest Neighbor* (KNN) memiliki eror yang paling besar. Oleh karena itu, model RF yang dapat dikatakan sebagai model terbaik untuk melakukan prediksi karena memiliki eror yang paling kecil.
+From Figure 3, it can be seen that the *Random Forest* (RF) model provides the smallest error value while the model with the *K-Nearest Neighbor* (KNN) algorithm has the largest error. Therefore, the RF model can be said to be the best model for prediction because it has the smallest error.
 
-Untuk mengujinya, dibuat prediksi menggunakan beberapa model *machine learning* yang telah dilatih sebelumnya terhadap salah satu baris data. Proses ini memberikan gambaran tentang bagaimana masing-masing model memprediksi data yang diberikan.
+To test this, predictions were made using several pre-trained machine-learning models on one of the data rows. This process gives an idea of how each model predicts the given data.
 
-Tabel 4. Hasil Prediksi Terhadap Model
+Table 4. Prediction Results of the Model
 || y_true | prediksi_KNN | prediksi_RF | prediksi_Boosting | 
 | --- | --- | --- | --- | --- |
 | **71760** | 0 | 0.1 | 0.05 | 0.18 |
 
-Terlihat pada tabel 4 bahwa prediksi dengan *Random Forest* (RF) memberikan hasil yang paling mendekati nilai benar (*y_true*).
+It can be seen in Table 4 that prediction with *Random Forest* (RF) gives the closest result to the true value (*y_true*).
 
 ## Conclusion
-Dari projek Machine Learning Terapan yang telah dikerjakan mengenai prediksi penyakit diabetes dapat disimpulkah:
+From the Applied Machine Learning project that has been done regarding the prediction of diabetes, it can be concluded:
 
-1. Untuk mengembangkan model *machine learning* dalam memprediksi penyakit diabetes, beberapa algoritma yang dapat digunakan antara lain adalah *K-Nearest Neighbor* (KNN), *Random Forest, dan Boosting Algorithm*.
-2. Dari ketiga algoritma tersebut, hasil evaluasi menunjukkan bahwa algoritma *Random Forest* menghasilkan eror paling kecil dibandingkan dengan KNN dan *Boosting Algorithm*. Selain itu, *Random Forest* juga menghasilkan prediksi yang paling mendekati nilai sebenarnya.
+1. To develop a *machine learning* model for predicting diabetes, some algorithms that can be used include *K-Nearest Neighbor* (KNN), *Random Forest, and Boosting Algorithm*.
+2. Of the three algorithms, the evaluation results show that the *Random Forest* algorithm produces the smallest error compared to KNN and *Boosting Algorithm*. In addition, *Random Forest* also produces predictions that are closest to the actual value.
    
-## Referensi
+## References
 [1] B. A. N.G., "En-RfRsK: An ensemble machine learning technique for prognostication of diabetes mellitus," Egyptian Informatics Journal, vol. 25, 2024. (https://doi.org/10.1016/j.eij.2024.100441)
 
 [2] S. S. Bhat, M. Banu, G. A. Ansari and V. Selvam, "A risk assessment and prediction framework for diabetes mellitus using machine learning algorithms," Healthcare Analytics, vol. 4, 2023. (https://doi.org/10.1016/j.health.2023.100273)
